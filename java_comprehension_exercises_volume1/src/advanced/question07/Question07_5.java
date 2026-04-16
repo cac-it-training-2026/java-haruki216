@@ -16,6 +16,9 @@ public class Question07_5 {
 		int[] amounts = new int[5];
 
 		// TODO: 実装ここから
+		double tax = 1.1;
+		double discount = 0.9;
+
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		for (int i = 0; i < 5; i++) {
 			System.out.print(itemNames[i] + "の購入数：＞");
@@ -29,16 +32,29 @@ public class Question07_5 {
 			totalPrice += prices[i] * amounts[i];
 		}
 
-		int taxtotal = (int) (totalPrice * 1.1);
-		int offtotal = (int) (taxtotal * 0.9);
-
+		//税込み合計
+		int total = 0;
 		System.out.println("\n購入内容一覧：");
 		for (int i = 0; i < 5; i++) {
+			int priceWithTax = (int) (prices[i] * 1.1);
+			int subtotal = priceWithTax * amounts[i];
 			System.out.println(
-					itemNames[i] + ";単価" + prices[i] + "円(税込" + (int) (prices[i] * 1.1) + "円" + "×" + amounts[i]
-							+ "個＝" + (amounts[i] * (int) (prices[i] * 1.1)) + "円");
+					itemNames[i] + ";単価" + prices[i] + "円(税込" + priceWithTax + "円" + "×" + amounts[i] + "個＝" + subtotal
+							+ "円");
+			total += subtotal;
 		}
-		System.out.println("合計(税込):" + (int) (totalPrice * 1.1) + "円");
-		System.out.println("割引後合計（税込）:" + offtotal + "円");
+
+		//		System.out.println("合計(税込):" + (int) (totalPrice * 1.1) + "円");
+		//		System.out.println("割引後合計（税込）:" + offtotal + "円");
+
+		if (total >= 5000) {
+			int discountedtotal = (int) (total * 0.9);
+			System.out.println("税込合計：" + total + "円");
+			System.out.println("割引後合計（税込）:" + discountedtotal + "円");
+		} else {
+
+			System.out.println("税込合計：" + total + "円");
+
+		}
 	}
 }
