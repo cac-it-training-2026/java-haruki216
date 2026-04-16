@@ -26,11 +26,6 @@ public class Question07_5 {
 			int amount = Integer.parseInt(str2);
 			amounts[i] = amount;
 		}
-		int totalPrice = 0;
-
-		for (int i = 0; i < 5; i++) {
-			totalPrice += prices[i] * amounts[i];
-		}
 
 		//税込み合計
 		int total = 0;
