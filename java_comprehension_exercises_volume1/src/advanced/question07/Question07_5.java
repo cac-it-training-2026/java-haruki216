@@ -39,9 +39,6 @@ public class Question07_5 {
 			total += subtotal;
 		}
 
-		//		System.out.println("合計(税込):" + (int) (totalPrice * 1.1) + "円");
-		//		System.out.println("割引後合計（税込）:" + offtotal + "円");
-
 		if (total >= 5000) {
 			int discountedtotal = (int) (total * 0.9);
 			System.out.println("税込合計：" + total + "円");
