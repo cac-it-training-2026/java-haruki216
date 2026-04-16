@@ -12,5 +12,15 @@ public class Question05_2 {
 
 		// TODO:ここに実装
 
+		int[] numeberGroup = { 3, 5, 7, 9 };
+		if (numeberGroup[3] == 3) {
+			System.out.println("4番目の要素の値は3です");
+		} else if (numeberGroup[3] == 5) {
+			System.out.println("4番目の要素の値は5です");
+		} else if (numeberGroup[3] == 7) {
+			System.out.println("4番目の要素の値は7です");
+		} else {
+			System.out.println("4番目の要素の値は3,5,7以外の値です。");
+		}
 	}
 }
